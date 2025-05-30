@@ -20,5 +20,8 @@ console.log(`Results of ${number1} / ${number2} =  ${results}`);
 results = number1 % number2;
 console.log(`Results of ${number1} % ${number2} =  ${results}`);
 
-results = number1 - number2;
-console.log(`Results of ${number1} - ${number2} =  ${results}`);
+results = number2 - number1;
+console.log(`Results of ${number2} - ${number1} =  ${results}`);
+
+console.log(results++);
+console.log(results--);
