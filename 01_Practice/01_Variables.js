@@ -49,7 +49,3 @@ y = 20;
 console.log("Reassigning the value of y:  ",y);
 
 //Always declare a variable with const when you know that the value should not be changed.
-
-
-
-
