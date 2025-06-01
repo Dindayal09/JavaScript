@@ -10,7 +10,7 @@ const car = {
     carFuelType: "Petrol",
     carSeat: "5-Seater",
     carColor: "White",
-    carWeight: 650 
+    carWeight: 650
 };
 
 //We can access object property in 2 way 
@@ -68,7 +68,7 @@ console.table([person, people]);
 //iterate through for...in loop
 let text = "";
 for (const key in person) {
-    text += key +" "+ person[key]+'\t';
+    text += key + " " + person[key] + '\t';
 }
 //Printing the results after iterator 
 console.log(text);
@@ -77,21 +77,21 @@ console.log(text);
 const personSecond = {
     firstName: "Allan",
     lastName: "Smith",
-    age:43,
+    age: 43,
     email: "allan.smith@gmail.com",
-    car:{
-        carName:"BMW",
+    car: {
+        carName: "BMW",
         carModel: "C720",
-        carYear:2025,
-        carDetails:{
-            color:"white",
-            weight:890,
-            seater:5,
-            type:"petrol"
+        carYear: 2025,
+        carDetails: {
+            color: "white",
+            weight: 890,
+            seater: 5,
+            type: "petrol"
         }
     },
-    fullName: function(){
-        return this.firstName +" "+this.lastName;
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
     }
 }
 
@@ -124,7 +124,7 @@ console.log(nameInLower);
 
 // Create an Array from object
 const myArray = Object.values(personSecond);
-console.log(myArray,"\n");
+console.log(myArray, "\n");
 
 
 
@@ -140,9 +140,12 @@ console.log(txt);
 const myString = JSON.stringify(personSecond);
 console.log(myString);
 
+//Object.entries will convert Object into Array
 const first = Object.entries(person);
 console.log(first);
 
+
+//Object.fromEntries will convert Array into Object
 const second = Object.fromEntries(first);
 console.log(second);
 
@@ -159,3 +162,105 @@ console.log(second);
 //   this.age = age;
 //   this.eyeColor = eye;
 // }
+
+//Creating new Object name 'target'
+const target = {
+    firstName: "John",
+    lastName: "Deo"
+}
+
+//Creating new Object name 'source1'
+const source1 = {
+    age: 43,
+    eyeColor: "Brown"
+}
+
+//Creating new Object name 'source2'
+const source2 = {
+    city: "Bhayandar",
+    state: "Maharashtra",
+    country: "India"
+}
+
+//Creating new Object name 'source3'
+const source3 = {
+    language: "JavaScript",
+}
+
+//Merging Object into 1 object
+const input = Object.assign(target, source1, source2, source3);
+
+//Printing new Date and using toDataString() to display in specific ways.
+console.log(new Date().toDateString());
+console.log(input);
+
+//Iterate Object throght 'for...of' using 'Object.entries(Obj)'
+let newText = "";
+for (let [key, value] of Object.entries(input)) {
+    newText += `'${key}': ${value}\n`;
+}
+console.log(newText);
+
+//Iterate Object throught for...in
+let forin = "";
+for (const key in input) {
+    forin += key + " " + input[key] + "\n";
+}
+console.log(forin);
+
+//assign only keys of input Object on ky 
+const ky = Object.keys(input);
+
+//assing only values of input Object on val 
+const val = Object.values(input);
+
+console.log("Keys: ", ky)
+console.log(val)
+console.table([ky, val]);
+
+const one = Object.entries(input);
+console.log(one[3]);
+
+const two = Object.fromEntries(one);
+console.log(two.lastName);
+
+const Oc = Object.create(target);
+Oc.speakingLanguage = "Hindi";
+
+console.log(Oc.speakingLanguage);
+
+Object.defineProperty(input, "location", { value: "Mumbai", writable: true, enumerable: true });
+
+console.log(input.location);
+
+Object.defineProperties(input, {
+    laptopCompany: {
+        value: "Dell",
+        writable: true,
+        enumerable: true
+    },
+    laptopModel: {
+        value: "Latitude 3420",
+        writable: true,
+        enumerable: true
+    }
+});
+
+let three = "";
+for (let key in input) {
+    three += key + " " + input[key] + "\n";
+}
+console.log(three);
+
+//it print single property descriptor 
+const descriptor1 = Object.getOwnPropertyDescriptor(input,"age");
+console.log(descriptor1);
+console.table([descriptor1.configurable, descriptor1.enumerable, descriptor1.value]);
+
+//it print whole object property descriptors
+const descriptor2 = Object.getOwnPropertyDescriptors(input);
+console.log(descriptor2);
+
+const properties  = Object.getOwnPropertyNames(input);
+
+console.table([properties, proto]);
