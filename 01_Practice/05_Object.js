@@ -263,4 +263,4 @@ console.log(descriptor2);
 
 const properties  = Object.getOwnPropertyNames(input);
 
-console.table([properties, proto]);
+console.log(properties);
