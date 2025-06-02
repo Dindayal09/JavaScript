@@ -1,0 +1,36 @@
+.btn-class{
+    margin-top: 195px;
+    text-align: center;
+}
+.mainHeading{
+    margin-bottom: 42px;
+}
+.button{
+    border: 2px solid black;
+    border-radius: 15%;
+    /* width: 80px;
+    height: 15px; */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#yellow{
+    background-color: yellow;
+}
+#darkslategray{
+    background-color: darkslategray;
+}
+#tomato{
+    background-color: tomato;
+}
+#crimson{
+    background-color: crimson;
+}
+#cornflowerblue{
+    background-color: cornflowerblue;
+}
+#fuchsia{
+    background-color: fuchsia;
+}
